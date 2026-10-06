@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Samy Mohamed — Senior GNC Software Engineer | Guidance, Navigation &amp; Control</title>
+<meta property="og:title" content="Samy Mohamed — Senior GNC Software Engineer">
+<meta property="og:description" content="Guidance, navigation, and autopilot software for autonomous UAVs, guided systems, and mobile robots.">
+<meta property="og:type" content="website">
+<meta name="description" content="Senior GNC software engineer building guidance, navigation, and autopilot software for autonomous UAVs, guided systems, and mobile robots.">
+<style>
+  :root{
+    --bg:#f6f7f8; --surface:#ffffff; --ink:#0f1720; --muted:#566170; --tag:#2c3744;
+    --line:#dde1e6; --navbg:rgba(246,247,248,.92); --dark:#0b1118; --accent:#2f6f7e; --accent-ink:#ffffff;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  @media(prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){--bg:#0e141b;--surface:#141c25;--ink:#e8edf2;--muted:#9aa7b4;--tag:#c3ced8;--line:#27323e;--navbg:rgba(14,20,27,.92);--accent:#4a9aad}
+  }
+  :root[data-theme="dark"]{--bg:#0e141b;--surface:#141c25;--ink:#e8edf2;--muted:#9aa7b4;--tag:#c3ced8;--line:#27323e;--navbg:rgba(14,20,27,.92);--accent:#4a9aad}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:calc(56px + env(safe-area-inset-top,0px))}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+  section{padding:4.5rem 0}
+  .eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  h2{font-size:clamp(1.6rem,4vw,2.1rem);letter-spacing:-.01em;margin:.5rem 0 2rem}
+
+  header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--navbg);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+  .nav strong{font-size:.95rem;letter-spacing:.02em}
+  .nav nav{display:flex;gap:1.25rem;font-size:.9rem}
+  .nav nav a{text-decoration:none;color:var(--muted)}
+  .nav nav a:hover{color:var(--ink)}
+
+  .hero{background:var(--dark);color:#e8edf2;padding:5.5rem 0 6rem}
+  .hero .eyebrow{color:#7fb6c4}
+  .hero h1{font-size:clamp(2.2rem,7vw,4rem);line-height:1.08;letter-spacing:-.025em;margin:.75rem 0 1.25rem;color:#fff}
+  .hero p{max-width:34rem;font-size:clamp(1.05rem,2.4vw,1.25rem);color:#b6c1cc}
+  .hero-grid{display:grid;gap:2.25rem;align-items:center}
+  .hero-photo{width:clamp(140px,34vw,260px);aspect-ratio:1;border-radius:50%;object-fit:cover;border:3px solid #26323f;box-shadow:0 0 0 8px rgba(127,182,196,.12);order:-1}
+  @media(min-width:820px){.hero-grid{grid-template-columns:1fr auto;gap:4rem}.hero-photo{order:0}}
+  .viz{display:block;width:100%;height:auto;color:var(--accent);background:var(--bg);border:1px solid var(--line);border-radius:6px}
+  .viz text{font-family:var(--mono);font-size:9px;fill:currentColor;stroke:none}
+  .timeline{display:grid;gap:1.75rem;max-width:44rem}
+  .role{border-left:2px solid var(--line);padding-left:1.25rem}
+  .role h3{font-size:1.1rem}
+  .role .meta{font-family:var(--mono);font-size:.78rem;color:var(--accent);margin:.15rem 0 .6rem}
+  .role ul{padding-left:1.1rem;color:var(--muted);font-size:.97rem}
+  .role li{margin:.25rem 0}
+  .recog{display:grid;gap:2rem}
+  .recog h3{font-size:.8rem;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem}
+  .recog ul{list-style:none;color:var(--muted);font-size:.95rem}
+  .recog li{padding:.35rem 0;border-bottom:1px solid var(--line)}
+  .recog small{display:block;font-size:.8rem;color:var(--muted)}
+  button.btn{font:inherit;font-weight:600;font-size:.95rem;cursor:pointer;background:transparent}
+  .btn[hidden]{display:none}
+  .oss{display:grid;gap:.75rem;max-width:44rem}
+  .oss a{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:.9rem 1.1rem}
+  .oss a:hover{border-color:var(--accent)}
+  .oss strong{font-family:var(--mono);font-size:.9rem}
+  .oss span{display:block;color:var(--muted);font-size:.93rem}
+  .oss em{font-style:normal;font-family:var(--mono);font-size:.74rem;color:var(--accent);float:right}
+  .langs{margin-top:2rem;color:var(--muted);font-size:.95rem}
+  .langs b{color:var(--ink)}
+  .nav .tgl{background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);font:inherit;font-size:.8rem;padding:.25rem .6rem;cursor:pointer}
+  .nav .tgl:hover{color:var(--ink)}
+  .nav .end{display:flex;align-items:center;gap:1.25rem}
+  @media print{
+    .nav,.btns,button,.viz{display:none!important}
+    :root{--bg:#fff;--surface:#fff;--ink:#000;--muted:#333;--line:#bbb;--accent:#1f5563}
+    .hero,.contact,footer{background:#fff!important;color:#000!important}
+    .hero h1,.contact h2,.hero p,.contact p{color:#000!important}
+    .hero-photo{box-shadow:none}
+    section{padding:1.5rem 0;break-inside:avoid}
+  }
+  .btns{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.25rem}
+  .btn{display:inline-block;padding:.8rem 1.4rem;border-radius:6px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid transparent}
+  .btn.primary{background:#2f6f7e;color:#fff}
+  .btn.primary:hover{background:#3a8394}
+  .btn.ghost{border-color:#3a4654;color:#e8edf2}
+  .btn.ghost:hover{border-color:#7fb6c4}
+
+  .grid{display:grid;gap:1.25rem}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.5rem;display:flex;flex-direction:column;gap:.9rem}
+  .card .num{font-family:var(--mono);font-size:.78rem;color:var(--accent)}
+  .card h3{font-size:1.15rem;line-height:1.3}
+  .card p{color:var(--muted);font-size:.97rem}
+  .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;list-style:none}
+  .tags li{font-family:var(--mono);font-size:.74rem;padding:.25rem .55rem;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--tag)}
+
+  .about{background:var(--surface);border-block:1px solid var(--line)}
+  .about .cols{display:grid;gap:2.5rem}
+  .about p{color:var(--muted);max-width:36rem}
+  .skills{display:grid;gap:1.5rem}
+  .skills h3{font-size:.8rem;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:.5rem}
+  .skills ul{list-style:none;color:var(--muted);font-size:.95rem}
+  .skills li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+
+  .contact{background:var(--dark);color:#e8edf2}
+  .contact h2{color:#fff;margin-bottom:1rem}
+  .contact .eyebrow{color:#7fb6c4}
+  .contact p{color:#b6c1cc;max-width:32rem}
+  .contact dl{margin-top:2rem;display:grid;gap:.75rem;font-size:1rem}
+  .contact dt{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#7fb6c4}
+  .contact dd a{text-decoration:none;border-bottom:1px solid #3a4654;overflow-wrap:anywhere}
+  footer{background:var(--dark);color:#7d8a98;font-size:.82rem;padding:1.25rem 0;border-top:1px solid #1c2531}
+
+  @media(min-width:700px){.grid{grid-template-columns:repeat(2,1fr)}.skills{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:820px){.recog{grid-template-columns:repeat(3,1fr)}}
+  @media(min-width:960px){.grid{grid-template-columns:repeat(3,1fr)}.about .cols{grid-template-columns:1fr 1.2fr;align-items:start}}
+  @media(max-width:520px){.nav nav a.opt{display:none}}
+  :focus-visible{outline:2px solid #4a9aad;outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <strong>Samy Mohamed</strong>
+    <div class="end">
+    <nav aria-label="Primary">
+      <a href="#projects">Projects</a>
+      <a class="opt" href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button type="button" class="tgl" id="tgl" aria-label="Switch light or dark theme">Theme</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-grid">
+      <div>
+      <span class="eyebrow">Senior GNC Software Engineer</span>
+      <h1 id="hero-title">Samy Mohamed</h1>
+      <p>I build guidance, navigation, and autopilot software for autonomous UAVs, guided systems, and mobile robots.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">View selected work</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="Samy_Mohamed_CV.pdf" download>Download CV</a>
+      </div>
+      </div>
+      <img class="hero-photo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCAFoAWgDASIAAhEBAxEB/8QAHAAAAAcBAQAAAAAAAAAAAAAAAAIDBAUGBwEI/8QAThAAAQMCBAMFAwcHCQYGAwAAAQACAwQRBRIhMQZBUQcTImFxFJGhIzJCgbGywQgVJDNSctEWNkNiZHSSouElNFNzdYIXJjVEVPBlwvH/xAAbAQACAwEBAQAAAAAAAAAAAAACAwABBAUGB//EACgRAAICAQQBBAIDAQEAAAAAAAABAgMRBBIhMTIFEyJBM1EUI2FxBv/aAAwDAQACEQMRAD8A1GyK5HKI9cw1ogMT4hp6KpEL3AG/VNsVqoq1sZjIdcBRvGfDMlfIKiF5BBuq7LFitIIxG5zg0bA7rRoni6Jl1/NEi7sp7WJCVcG9FSqbjaqoqsUtdC62wJCtsFS2riErPmuC9qpZR84nXKMsvoLJa6TLwuym2qavkJKtFnZHJElC5RHHQq0iBSQnEJyhNUvGbBWyLsQxdwcIipOmeBTR6fRChcXfYRhSdM69Oz0SccmiT+CF3SJLMuORUYnIs14CNnzJujR3uqwFkkIjYJdrwE1Y42RgSltZC3CstO2XUWTGWExu8k9jeQEaSISN1U6LX7IHDXE4ib9VYXygKuwN7nFHW6lS5fdClyaLH0OWyXITqR2Wne7yTKBLV8oioXk9EMkDAyfiuTNWSLMMbPyzlovEEve1ErvNZxjWszkq7xOvo1yR0H60Lfex94ETRfksDg/WNW6dkT/k2rPR5B+oeJszHWCSxSW2Gz6/QKSZLYJrjNRbDZ/3StDRyq5pMwnHnF+Jz6qk4vfvbX5q34vJfEJz5qoYt4pvrSZHVpXOR5h0Wan0UngsYixKIjfMo+lf3VMCE+wmQmtjJ/aWyEV7Bmtb91m8YfWgYM1pcfmW+CwHtAF8aLuputmopz+bmNvyWO9oDQMSvpukWwxHIGjnmxobYQ/I0W5kLQcJk/RAVm+FvJDR5hX3DJMtGNVdWWM1XQrUy5pD6pJ5GUpB0pdKV17wAbmwWpGRIkuGdcVaPMLb8PFom+iwvhCZr8XGXWzgt1oPmt9AuNr/ACPQenLEDnFn8z8a/uM33Cghxb/NDGv7jN9woJVPQ3ULMhMojtV3MuLh5OwNqmISRkEKs4nB7NM3S11bXNBCrXFB7ssPktGjaVqZl10W6JJDWvwahr2NfJGM45hOaWBlPAI2bBNY6m7G36JeOQkbr2MJxkvifPLYTi8SCzhMnbp9LqLpk4WKdEV9iZKI7ZHIRXWsiLEwlmGyQKOCbK2D9jXFfF3Y81LUjD7NH6KGxB13x+qnqY2p2eiS+GaXzBBZWgNTa6cyuuLJtzRISzuZGjJzIiPGNVGWPGu0RsyI0aLqAIUY/VOGvGXdNAbLveFU0WpYItzv9rOt1KkA7VRTHXxZxPmpRouVUTRZ9DunKRx2TLQOS0ItayZ8Rm1CUMiq+zKcXOYyH1We4v8ArnK/4p81/wBaz/Fv1zki5/E7Oj7GMH6xq3LsiF2NWGwC8g9Vu/ZCz5Nqz0dheo+Jq9rKNx1xGHTfulSblE8QPAw2bbZbDiRWJIwnFHE1k/qqrX6zD1VmxRwNVP6lVmr8Uzb9VkkdynskW6UzbJ1hTx7Yz95NLH2ZtkvhDSKtl/2l0IL+lGOzzZrFNPkw9gB5LJ+NiX1xJ6rTYHE0jfRZfxk/NiFuiXf4IDRL+xjbC9Cz1V5ojajHoqRhDcxb5K4MqctIGM1KCnsfqeROScRvPVNZJ5JzYc11kLpHku0ThsXdjQLRgzJpE5wHS5cSDnanMFulDsFi/AwzYgNPpLaaMaarja7zO/6e815E+Lv5nY3/AHGb7hQQ4w/mdjh/sM33CglU+Iy9fIRcAEUo79kRcI7CC8iq5xSLtb6KyEaFQHErbtb6J1HmhGp/GyIa2zG+idQsIF1wR/JAjonlHGHNGi9JpXiWDxesW5CL2HLcpi8eJT81ODFYDVQk7CyQghdSEsnJlHDG5CI9LPFhdJO2RIoRslI2ZjYLgAJTmGOxRAkVisRY6M+alKWUezx+ib40wCOO26Vp2/IM9Ep8s0PitCkjr7JK5RiilEKOhxSkfzgkRqlY9wo+i0PG7IrnNbckgAaklVPiLj6LC3CCiYyokuWvkcfCy32qgY9x/X1wDZahzWEWyx+Ee5YLNbCDwuWdjTekXW4lLhGqYhxXheHG0tQ0/ukKu13anRQ+GlpXzO2u51gFkoxAV8mkzi48id0cPLG2NidgevksU9fY+jr1ejUR8uTS8P4ylnrX1EnsxGUOLGktNj0vurdhvEmHV72xx1LBKRowuFz6dVgxqCw5Q43Grdd//vRCWvqTFaKd7ba2DrAq69fJcSRd/pNc/Hg9NUzg9two/ih1qAlUHsq7QnYjK3BMSk/SmtPcyu0MoHI+dvetA4lZ3mHE7rowmrFuR5+6iVFmyRkWKyEsdZUPE796b9VoeKRgMf8AWqHibR3pSb0dTSMjqcHvGrfOyKP9Ga7yWFUzR3rV6E7K4AzD2ut9FKpXJXqEviX+R2ig+ISThk3opiTUqL4jGXCZvRa8cHFh5IwfEv8AeJ/UquVB+Xb6qxYkb1E/qVXKi/fg+ayyO7U+SUAJp2JzhTbVLL9UhGLwM9U9w5v6Sz1XTiv6Ec+yX9jL/Tm1ECf2VlfFL82Ju3Wok5MOv/VWS46/vMTfY81n1Hig9CvmxxhpsG25q3UcH6OHu5hVTDWXMavFLF+hN05IaOxmpeBowXeUq9oLEI47PKVLNFrxwY8k7wCy9eP3ls9Jssh4DZatBA+ktfo9guDrn8z0mg/Ehrxi7/ydjg/sE33CghxqLcF44f7BN9woJNT4G3eQHBEKUcEQariHVCnYqB4l+YCeisBb0Va4xJbCwg8k6jzQjU81sbx2dE2xGyXopRG6x2ULh9WcrQ7XZSQIuHAr0FctryeQsjlYJgzDLyTGpgbMbhCCUOs081JRYdnbmB3XQhNdo5s4POGV+Wne3kkTF1VmqMHc6O6h6qjdE4hOjYmJlW1yMGRC9k7jhytvZJhhBuQlXSWZZE5AqOSJxuQXY26eUzWmnZ6KPxWIySMKkqeMspmc9FnhdFtmyymSghORhaUnZOHDNuEXuytKMb4Gzrjkq5xljsmHUQpoXZJJmkufe2Vo0+JVpc1ZJ2i4znxmemjZnEIaxzr6ba/ErJrbNlfH2dT0ihW389Lkha6tMkbZHOAcRbfQ/wAVCiHvpC5zS941seY8lZOEeAsZ44qPk4u5o43AOcb7rWqLsWhpaYRsZGXgWJLb3968vbqYweD3lWmclkw78yVTgHinc4NFw9g1CI+CVzWhwN72dcfb0W2v7N8RwmUywR97HsWAqPk4YgqKmz6GZkh5lu/ryKT/ACzR/DXeTJH4VVtt8ncPFwdwm8uG1cY7wROy/Sstsp+C3QODXxkNfoWAXAPUdEer4ViiAvTWDfnXGhF0H83AX8NP7MCZUVFBXR1VLI6KWFwkY9u7SFvXC3GkXGPCrpJHMbX04DKmMdeTgOh/is9414PfA91RSRkNNwQBof8AVU/B8WruH6/vqeV0f0ZGHZ7eYK6+h1aT/wAOF6n6c5r/AFdGi4rs8eqoWKC0rleamVtVTCZjszXtzA+RVKxZvypXWu5WUcXTZTwxjSNvOwdSvR/ZxF3WDtPkF50oG5quIf1gvSvBDRHgsfK4CXp1yB6k+Cx3u5RPFTv9lSNG5Ck7qH4mP+znrUzk1+SMTradz5ZdDuq5XQmKVtwd1oRoe8D3W3KqnEdJ3TmnzSZQ4ydamxbsBKcXgaU/wlt6tvqmVIf0cKRwZl6wHzW+P4UZLPysuNeRHhZ/dWP4i/vMRf6rVuIZxBhRF92rInOM9Y8jm5Y9TLlRNPp68mWDD227uwV7om/obL9FXMMw9raSOR2hVmox+jN9EdSwxWpnlDfu/GV0tsCUd2jiEV7rBafoyJlj4BF6xv7y1yl2WTdn+tUDyuVrNJsuBrfM9RoPxIbcaj/yTjx//HzfcKCHG2nBGPf9Pn+4UEurobb5AdqiAWSTqaUbOHvRDBN5+9cXB1Rwdiqzxp/uzD5KctUN/aVd4zfKaEG2uVMp80Jv8GV6ldZjDdTMLs8QVQjqqrIMoPuUjQ1db3Z0d7l3cnl3W8lha4tkbbqrVh7yYm3KzWbF5aVofI5wN06pOMa7u7Rg2HOydCWFyZba8vg095JjICr2Its43VWl4xxRkZcQ6w8lWMS7RatrnNcHXCdXYkxU9O5LCZfZi0N0skBqFmR7TZs5a64RH9pzo3Wujs1EdrSLp0Fm5N9Gh4kwAsUtRNzQxg7FZjRcbyYvMxgvdXikfWGKMtL1z4SZ0LqsJZLazDIXxAm102NJAZu7B1TBs+KCEZQ9Jxw4qZRI1rifRba7f2cu2nnglZMAaSLHmvNePZZ8erGN8YNVJ538ZXowyY9bSK55XXm+lY+s4iZTuu6R85Fh1uVk183tWTteh1JSkz0j2V4ezD+G4xkAc7VxtzV075g0JURgdG3DcMp6Not3bAD5nmpBtO+TqLry822+D2cUCepZazWgps2KKRwJjaCnn5suPnLgw/LoCl7WHnCEu4gA1a0KMrYIJGv8INxspKppXsYcpN1DSxSMvmJKXYHAq/EmEU82GyANtoSvNmP0gpcRmY1xLA7Q25L1Hioa+mfE76QIXmniyB1LjddTv3ZJYDqDstfp8nloza5fFMnOF6gz4IY3EnuXlg9NwofF2WlKkeFXGPD5gATneT8Ezxdt5DcL1cZZrR5GUUrngYYWzNiEA/rBeluE2ZcHhHkvNeHvZBWxyHZputnwXj+KnoIogGkgK6ZJdmX1CqUksGjhQ3E5/QHBQTe0KI6WCJifEsVfR2Dxc8lq3xOZCiSkskFC/Kx+Yc1V+KW5mB1lZXOcacuyi11VuIKgOisbKm/gbKo/2EZTuywBTXDzO8qQfNQMD7QBT/DD3d/cNCZGxe2kVbW9zY+46ndDQZB0WdYbFmnaT1Vy45qzMMlrHZVrCDCw3k0We2Sc8mnTQcaieq8QNNQsDTsLp5w5xNHM0QvcLqu4tVRzR5GO0sozBwY6oEvsLpMbmpcDZaaMq+TUnSNkdmaQQiS6NUbTYlTxRtDpBdOH4lTOabSDULoqxYOS6pJ4wXXs9baov5latSbLKOzmZk0oLXArV6TZcLV8zPTaJYrQ14404Hx7/p8/3Cghxz/MfH/+nT/cKCCrobb2KlttUUhKHZEcFx2dITdoCqzxl/uzfRWYi91W+MRelHomU+aFX/jZUIQMo29ylKCxjI0UXEDkHopPD9GLuo8pLsZYrgb65neNJAzaqZwPB2x0QBaCQU3nxSnpISyVwuTcaqSwitBpiWnwkprjlJow2WOMmpCGJ0jI6STwDZZBxA9sNTN4QbLZsVlElHJz0WL8TD5WZHjCJpZ7pFNqakSSnKOaQN3u11SUhPfOslYrk2Nkh8ndXCRYeEXhmJxjYLfsMcHU0J30C888OEDFI9baresIqMtNDrfQJldWYOSOdrNRixV/suMIHs7bhOYhdgsm9G5s1M07FPIm20GqKGMmKbbOZSLGy808M4JJD2v02GTMOaLE5WvB5AEuHwsvTbhmBaeeio1DwzTf+JdDiA7qWtp6GV9VI0WLnnKxubzsSsPqdu3Ef2d7/wA9Vu3z+1gn+JeJKfhmk70Qmpq5NIYBz8z5LO6ztvxuhJdNgFQ9jdyGFoCtfG2GYzNUTVGGQQyTublifM6zYh6LIMc4f47BYXvfKXA94I5WhrTysdyNui4UJRbPYe28ZNBwTt/w+umZFWU01I4m3i1Cuv8AL7CnU4qG1cZYed1hWBcOYq6vbT1DWz3LbOcBck7i241Wq4n2aU9NhjpXOvaO5Zl0JtqlyfPAft4xk5ifbVw/Qgd5M8h1/o/BQ7u3Th2cFobLqbAkaLOcdwyrppGthw5kgN8pLMwaB1PJNsJ4mfCzuqjAvC0ZnE0+3K1rAn6ro4xjJZwVKDi8GrxcRUPEEHtNDLmGzmE6tWI9qEJg4ne7LlEkTHX67haNg7IKiop8SoWd1HIC2VhGwP8Aqq7x3wzPxDxjh9FGRH3lKXPkP0A1xufXX4qtM1CzjoHUxlKvH2NODaEO4ebO9uri7f1UHjrbSOC0eWhpsNoG0lEC2nhbkZ1NuZ9VnWOWMrvVeth+NHhdzd0v+kJCPlWhXLDWN7lvhubKnwD9Ib6q/wDD7Iz3YfshrXJerfAR1mt1bb6k0fXyieONrtCdlYsbpoWx3i68lUZLsr4t7XVz46Ead7nyXuZ4jwqPQXIuSqZxHYQjYEq4VrT+aoSP2VTOJSTEzqtkkvaFU595jKJgFKDborZwQyN0tnNB15qqAE0jfqVs4LbZ9x5oUvgg7m8sjuPWRtm8ItuqFI5wDbEhXTjuQmqtfqqcW3aCs9mMmvS52IVlaRTZuaaU0jg+9/cn1X4aP6lDxSEOssrwpG2HMSQlqZgRaR3vShrJwz9YUwznmUZri85UTkUoI2zsWlfMQXG+i3Sk2WI9ilMYowSeS26k+aPRYrOzdXjA044/mPj/AP06f7hQXOOP5kY//wBPn+4UEyroXb2B1YObPii+1A/RPvTp1PH+wEm6njt80LkNHRQ3NU39khV3jCdvsrTraysjqeM/RVd4wp2GiAtpYoqeJoXd4MpcVfCI26nZP6PEoQ3ndR0OHRFg326p3S4bDmK7iyeYezJWeLqwTVA7uUsAI2VkwDiKlpcPZHKSXWvdVLi6k7itAa7TMpzBsJppaJrngknzRwk/oRqIVySyTNfxXQuppG66jqsx4grY53SubYh2ytHE2FRRUpdC19+ao2Ks7mgcbagK5Tl9l6WipcxK09hdK4gDVdGZvIJuyocXJVsjnnklpvB1XFImuHWFtex7jbXdbZg2KUkUEXfPsAOaw3CHvNZGzqQrvxM59BhTHxyOa4tCbC9wg4mDU6WNlkZ5NmouJsNEYY2Ye9SkGPUO/eGy88cDYq6rqxFUVBGvNbfR4FTGiD+/JuL3SoWN8iZ1Qi8MnBxHhheB7RY3TPAqNtJxhiUzvE+emZI03vdhebW9yrNZhdPA5znVAspDBOIKOTimijimzGTDnRPbf5ro3gj3g/BZPUE5JS/R2PQbIQlOC+zQpqOOois8XBVbr+CaCokL3STgE7CQ2UjUY21gyg2soWXiT2qfuILuPO2wXDm4nrqoyxwPcH4bw+hqB7PE3M36R1JUjjzz7OANW81Aw8c4HhddHhUkzvbnszOzNIBPOx2+pcxLjPDBRyvmqGsjbqSUaS2l7ZOWWRMnC9LipdJHIYJ2nR7fxXI+C8SaS2Spge3mclilMGxiiqW+2YZUNqKct8eQ3ym6s1JisVTECHA3SYpdMbLciszcPw0UQBIuNzbcqo11PLJxdhssDWnLC9r7i9ml7bK/45VRuhdY7a6LMKTiNsXEmJ1jSTHhtH3YP0TK94NvgEVcMyxERZYordIZ4zXxM7+Njhdr3DT1Wc4tIZJXK7DDfaIHTOfcuJcfU6qo41SiJ5sV7CKexHgYuLsbX7ZCQm07TyVywqrjZGy77GyqVPEHzNb1KtzMLa2na4P1S4N5GalRa5JOauikjs6QFQdRJCa2NwdcAo89G5rfnqGqY3snF3GyOWWJohFPhmnMraWfC4252ghqpXEzmuDcpvYokDphExrX6FJ41CWU7XOdcnXRaHJ7cCq4JTzkSa4eyt1Ct3B4Y1hcXAaHcqjZJO5bronsVdU4fDeN246qlZwlgZZUm3yH43kzVxs6+6rlvkwSu4hiE1VMXSbpsXlzACUicuWa6q9sUhzXSD2SwPRQ0TvGn9Q0thuSmcQB1WSTeTXBYiLwsEkgB2Ui+nhha1zSL32TOKle9ucLpY/rdMTaQDWX2bv2OOvTLY6TYLF+xm/s1iNgtopPmhZbnlmupYiNeN/5k49/0+f7hQXeNRfgvHR/YJvuFBXB4QNvY86ojmgo5sOaK4hctnQQg4DZVvjAhtG0noVZHHUqo9ocxhwtr272Kut/NAXL4Mq8DgWAjolxUNpmOkdsAovAqjv6MOJ1CPjUpZQPsu7ng8q1yVDiXGY63EAGkfOWhcNRxOwtri0bXWNNe2WucXEaOWj4RjYgw3u2PAsPwVQlxyBqYN4SJXEq/Dntkge0ZrdVn3EUMb4JQxthbSyZYljUhxZ13mxKkK39IoHSb3ajUtwVVTreTODE5spaBzTyKLW5AQsPbCHdUrKQHjL0UidCTJPAIQ/E4gbbq09oMmWijYOgVNwmsNLXNkPIqd4mxA4jTA9Ak2SXQLXRXcDnfT4lE5jrXIXpTAnS1OAtfnBOXkV5ep5THUNI5Feh+z/F2PwVrJXaZUNRn1kOmI4rS1EmcA/FUSrxKs4axSlxSFxL6eXxtJ0c06ELUK6to2E6XuOSz/iSKkq45orDxtNvI8vitXs+5BxMWm1DpujL/S9txtnEGFw1tFN8lI0lxB1aeir9LxzS0FY+jw2I1MzXWke65aDz9ypPAXE8lBO+hd8x5t3Z2vstB4a7O8JmhdWz95FM8ukEgeRlNyfrXl5QVc2pH0emfuRTTKNxjxDj2LTumdSGGNri4Oii8Vhtruq/V41i9RIxsr6h+RrXFr4yA5/PktpquC2sOaHEK0NIuHNLZGH6iFEVPDNZG15GJtc3k11Fc++9kxTSXRrWlclmMxhwRx3QUOHmCopTTOsHOsPDrzVmpMahfOZKGdklPLzYdGO5j/RVefgitrICH1DGMcLEmAAu8rKFog7gSDEInTCYGTPG12mwF/tHuSZKMvHsXPdW+XwWni7jBuD0Zc+QF+U5Wc3O5fUscp8Rr5GdyZXd1LP372j6bzzPVJ4litVxHigdK9znPN7A/NaNlN0FDGXsOVthyXU0en2rLPOeparPxRaKCZ7cNAduVU8edmkcro6nDKIFttlSMaPyrl3n4nmKn8iJpjlqWnzV0pnmWnZz8lTIdJm+quWFNzQt9EiI/UdINPH4dQoGvaBMNFZqltmlVrEzlqG2Um8LIvTcyHAfldG0dEbHwfZmeibsfeaMFOOIX/IsHkmUycothbcTI5z7QtC7UPPdD0XXMvC1crG5YR6K1wG+WQM/6worbaLsxvIUVu49UqTNa6Fqy3chMYwL2Cd1rrxABM4b3uszfyNEfEnqeSNlNl0vZM3TBsgFtEiyR1rXSZcXPF+qbKYmFfLN97ILeyXC2CkPhCx/sdFsPB9FsNLo0eix2+RvqWIjfjIX4OxsdaCb7hQQ4u14Rxkf2Kb7pQVR6KmuTpop/wBr4orqKcfS+Kk7FFcufg2ZIV9JUXOp96rnGWHyVGHd288irw8aKscZuLKJlud1K180Da3sZltPh8+H0hc0m1uRVXxriCpbG+F2ay0V7O9oDfTRZbxPGIZXjzXatWEsHnKpZlyVl9Q/vi+9iSpzDa6rLMrXEg+aroN5B6q1UEcUVOH+G4+KUjRZx9CMmDzzyd84Enqn7Y5XU3cnQWsmc+P908RNB6aJamrHTPBudU7oUt32QeIYZ7K8yXFyo+PNNKB10Vnr6KStl7tgLlGTcP1tLIHCJ1r8kUYt8jPdSWGxdmCGOm9oO513TOpqnmMs5bKdqHSxYYGvDm2HNVeSa7CkXLEg65blkZveGPB53WqcKvq/zU0xZtRbRZMX55gPMLb+C8sOERgi1wrp7Jq8KAlVx1ndZnGQctCq3Uw1D32Lna6aq543W5WNa3RVeSZz3AC5JOgG5XchpkobjzH8qTt24ICbBKvB56fHcuaifPkc4C/du6H1Gy3Lg2thxnBY5aWUOBFrOdcj1TdvBQw/hP8ANmKZZp6kd7UwbiBx2Z6gWJ8/RZNUYjjHZrib4qd8ho5HExucNHeXqvG6uMbLJRXaPo+hc6qYykaB2h0+N4fQ+10EkkQjvfI7S3oq3wTifEvEMwmkqZDSxuyktbfObKFxTtdxLFKJtPKGBrvnEWuR0QwLtTdgOHMo4IIwGFxuB80papko4wa/5K3Zya3UzjDKKWqq3kNjaSc3JefOM+KJcfxB7gbRtuNOdzf+Ce8Xdo2IcSRNgLzEwjxtbs5J8H8Fz4vUMqq2MspWkODCNZOh/dRU0qlbpCrbXc9sRXh3AZaXDG4jO0iSsNoh+ywa/EqapMFqc2ZrtN1eK3AoajhuvrGEsfhuSUgDTuScrj9Wh9LqNo6KWEXLwQRddnRYnWmeZ9V3U3NfRE1Jq4aYtdcgBU3EXufI7MtHxN5FM4WGgWeYkbyu9VvnHjs51E8vojowXSgNGqsVDUVEUYFiB6KGw9zGVbS4K5UrW1DmBjRssyi2+B99iXaIuarqX3GU+5RlbHNpI/dXGow8x2JChccpntiBAsFdkWlyDRZFy4RWPziYp2udyRsUx6OqLWXvawUZiDxE433KhpH5pwQeYSlNxWEdCNMZPOC2sxASMa0Jeqlc6EAjkozCWB8jLqxVdIDEMttlpbeDJJxjLBU5fnkog11Tuqpy15ukRHZo0SnnBoUkEe10oyhJ9w+LUpxmERvZGqHZ2X8kpRzyNcsYG7XgDmugZiC3qiOIDSVylkvINeagS/Z6C7Hb/m0XWv0vzAsl7IwPzY0+i1ql+aAstnkaa+hHivXhPGB/YpvuFBc4q/mrjH9yl+6UFSeC3HJKE2RHKpf+I+FH+mZ70V3aLhZ2lasLNOC0v2Vc4sjD6MX2F01d2h4cdM7VHYrxTTYxD3FO4F56KVvEkwbItwaIJxHsuVp2usy4xjcJXaarU6fCa3ujcXuNNFVsb4Pr6ycnuzb0XZssi4rB56uiyMs4MeJLZACCrDh0rJMkTn/OUjiHZti7prsjIHouUPZ5jjKuNzmHKDfZJjJZNs6pOJH47QtpXslaQQSneDBsjgeis2NcCYlU00bRH4h5JHDOBsUpXHNFyWiU45M+yTj0OMGNJDUh89vNWqGqwmdoD2MJ6qsVHBWJynMxhHohBw5i1O0NLCTdPrujjBhu0029w641paF2Hn2ZrQSOSyaamfG1wJWoYhhOIPiLZG2Ftln+N4dWtn7tkTjy2We9pvg26SE4xxIr1KzNXsaTpmC3bBmCHB4MpGyx+m4dqxKyWR8cVjexNyrrBj+IRUjaSF0bGgWL3NuVKotdmm+iViwiaxuV2SM366p72X0ceJ9omBUMzO8z1HfFn9VjS65+sBVfv3kZ55XyuHNx0V+/JkwqfG+0XEMdcP0XDaR0bSBoZJCAB/hDj9a6Fusl7TijJp/R4Qs9ybyy74wyaDjfiOgqAWtkfFUwl302Oab29CLKr41hFLVtfBW00dRC7drxcBbB2icGTYwYMYwzTEaRpYYybCeI6lvqDqPcs6ez2phDmFkjTlcxwsQRyI5LxuqjKE9yPZ6WcZwwYhxF2cUkEzn4fNLGxx8LCbho6DmoKHgCpkJzzkD91bjieCB7bhp3TOLh4tF36jdVHVWJdjXpK284M+wPgKkpZRJIwzSDm83t6BaDhWEPvHDFC5z3nKxjBck9FO4DwnVYo4ikhDYwbPmk0YP4+gWkYJw1R4FH8iO8qHCz6hw8R8h0HkE6uiy55l0KtvrpWIdkFBwjTYVw9X08zRJU19M6OoJNwG5XWYPIXOvMrzdwjxkyKKHC8RdlygMincdLcg7p5FersZa5lBUuJJPdPt/hK8NuYQACNhZdule3HETg6mtX53mxYuWikO2oKzjETaZ1+qa02N4jTxCFlVI6MCwY85h8UnLVOndd4sT0Wt2KSOTHQTrfHIpS61DfVaBgdI9oa8sNuqz+hDhUsJGl91sOET0xwlto7v01CGp4kI1kJYSSOuoxUt1F9FWuLYRTUwaByVsppiWu+Td7lXOM4ZaiAZIXn6lLppgaWqSa4MkxoF7wAocsLJW36qy12F1rp2kUshHomVbglYXMLaaTfosr5O3VwhxhRs+Mi6tcpd3ItY3Cg8NwypjY3NTyAjyVkZSzdyLwybdFpclg59kW5dEBVU+bVyjpGWNlOVtPOQQ2GT3KNbQ1Rk1gfb0VOSwXXGREVpyNFjZEjnzMtdSWJYZUuADYH29EwbhdW3/28nuWfPJtUfiJTHwFI0riJB6p7JQVRZbuJL+iTp8PqWyNvA/foo2FFcHorskFsJjPotVptgsw7K4nR4RGHAgi2hWnUurQs0+zRBcCPFZtwri/9yl+6UFzir+amMf3KX7pQS28DFHJ5GNTUj+md70pT1dQZA0yON/NIJSnHyoWVmomhJIAPlHKSwTFH4dUiQucdVEuc4MGiEMjr3KXyFg1CPtJc1oAYLAdEZ3aYG/0bf8ACs6jlBFroPcLbKvdkV7UTRG9prHHWJv+FKN7S4ecUf8AhWYF1jojB9tyi92RPbiag3tOp3OsY4z6tSw7SaW1zFF/hCyYS+LdG7919Cp7sie3E1hnaXRhwDo4wL/spGq7WqPJJHTYIHyDZ8rgGk+g1WXskObMb2bqk6eqDqdrybZhmP13XR0kN63SM9qinhFjxfjHFcVcc8kdOw7R07MgH17/ABVenkdK4lzi53Mk6rhmzNJ0SEche/W9l0UkuhOEB92NJFr8roU0/fXcWlrho5pGx/ELlRK7OGtYNeqEIe6xNyrLFKt/yR15WXpn8mfAWYV2fmtt8riFS6ZxtbQAAD7V5ndTvrJYqWPWSZ7YwPNxt+K9g4ZX0/B/CdBQUsAlqRH3cMDdL20zO6DqUm/xwQmOLeMcD4Kwh+KY9XxUlMzQZtXSO5Na0auPkFgNX238P8UYpLLFwjilPAXBjK6OpiD3b6vjOlvQlWviLs4quNJ5KziGvNRLICI2ubZkIP0WjYBZrxJ2fS8HEGNrjRP8JaG3dCd7H+qdwfUJcKIS+My98ocxLHJx1w0+/wCmV0IAJtNRk3tvYtJ/BRlX2n4BS5jh9FUYhK2+X2lpyOPK0bbX+sqg1bS759mnd125bW5X81B1ta9rhTUzXmc+FosbtGliCrhoKYPOA3q7ZLGTeeAfyi8DxWpbhHElI3AZ75IZ/wD2z+gd/wAM/DzW1NZGY2yMc1zHDM0tIII6g8wvMfA/YVPV07a/GIwZX/NheBljH7T+Rd0HJarw6zEuBjHRsdLVYRs6Mm/cj9pl9fq2V4S4QvvksfFtWKPBMRqSNIqeRwHU5Tb42XiYx3AB969nccQMquEMWe5/yTaSSUkcwGkj46/UvHTGWAvvYIodFDbuwjNs1wBsL7eaWMYeC0EtPUa2RKegEcveF7pZD9N+6MsVYDfQ7KWw3iDEsMcO5nzMH9HIMzVGstulC24uFCmk+zSuH+1HC2gRYxhL4+Rmpn5h/hOvuKt8XEPCGLxB1LUwy6asf4Xj/tOqwW1kA+xuNCkzpT6LSS+jcn1fC2azoG3HmuGfhZ28DPeFi0OJyQG73FwG9yb2Uz3nfQtkY45XC4WC5Tr7HwhGS4NMdV8MDQQt+opOXEuHWiwYB9ay17ZDrmd703qHPHN1/VLV0mW6ImqOruGtyxvvQbWcMnaNt1kMkzzYZ3e9KRyPH03e9X7sgfZiapLV8Nu3iamz6zhlp/VtWbySvA+cfemkmZ9/E73qe4y/aRp5rOGXGwjb713vOG9CI2rJO8kY/RzvepCkme9zWlx3HNW5spVo9CcMupjTNNMLMVxpToFQeAYSMKYbq+UxyjVGpi3HAlxWbcKYx/cpfulBE4pkDuFsXF//AGcv3Sghm1kKC4PJCPA/5QIjzYk2Qpz8qEk0EyJLt1RmOGpSVrjRHYx2U2QYCCioyvsnLZMwuox8Ls9zdOqdriBe4VOJExXP4kSSTWwTgU1xdJmAdUMYlsbXINyu99zslXQhcEF+SPBTC+0EwyEm1gExZUFsLWC4Dbj4pzVlsMRj0BfqozPcubfY3XZ06xBGObyyVjdeEAI8Au7ZNqWQObbonsFhE439SnoESe7O5pPO/wBpS8bcrQkWDMGHq3ROANAERCy9muHxYnx/g8M7XGGOR1Q/K29g0afEheuqLCsPMYljja9xGr+a87/k3YY2s4uxGre0ObBTNiH/AHOufur0uKdjNYwGHy2WbUPnBBtNQZWER2I/Zd/FZ72n0tM3heuNS1o8AbFm/wCISMov5kfatLfcss5vuKw/t3xvLUUeDxOzWaZ5GOBuSSWt9wDj9aGhOUkipPCMMx+eanpi+Npnzu1a27ru62Isem6vvYV2aw1sDOKcVia+MvPsrJBoCCQXWPQ7X8ys74ieHUzW6us8ANdqRryt5rfuwWuhxTgaCnLAZKCZ8JadspOdpt6E+5bLuFwBA0SFjLBrRmtsG7JyKJkrbPjBBGt9U7p6KV48LGtHUhOm4YwDNNI53lewWJySGFB7UHUmC9m+PBjgHupHRsbmvbNZunvXjwjxkDa69ZflB1NLTdn1VFF4XzTRRgAb+K5+DV5MGrtynQ6IcdEHOzAkHyQu6OJ5c65t4dEqLWSdVfugAN3IyHY2eAC90uwkMIKbxycr2QfMA6wPJQgd0lkVzk3dLc7ojpSGmxUyQLV1Glrm7vs2U9hFWX4bELXsCN1V6k5pNNhopbh2ouJKZ2/z2fiseqW6ORtTwybdMRuj90KlhI3SRiJ6p1TRljDbmuaackPNA5shB6o4YQE8qoCbuA1TMvturQLOluYWRHQEC6WFsosul922sfcoWRb4yHGyXoY3CVt+qWMRJvlKVoonGZvhO6LPAJtvAbntw5gur7SG4F+io/BMdsPZdXij2CeksGaT5E+Jo2/yZxb+6S/dKCPxEL8N4oP7LJ90oIZxWQ4Pg8zs4JrpNS13uTuj4Eq2vDntd7lqAqYG6BgQ9sZyZ8Fl3Dyis4Lm5tKe0vB2U+NvwVtNW7YR/Bc9olcbCMqimyuu4Lhf9EIo4Kjbtl+tWgGodsxdEFS4/N+CmCIrQ4PaAb2SD+D2X3CtwoKh4RThE7uaiTJuKaeD4/2ggOFIWDcK5/mGQ7uQPD5sbv5IkibjEuLIY6TFHwRuvkAJ9bKAbITNba4U9xvGIeJK+MEnLJb4BVoEtmB812quIIyvsmKW+V9vRP3nuadsY3dumlCAGAu5uujyzXkJvoNk8odRgMEYvs0JUuTeOQFjCd8oShd4frUIbx+TJSTikxisiY0CWpbHncNg1m3+Zb4ZmNOVzhm6BY7+Tnhzv5FRyOeWtnqZ5bDS/iyj7q2OOGOIWYwD7VkveZEOvkDGF5NgBdeYO1/EjXcd4kMwcyERxBr9rhgvb3r0zVQumYQZMrV5N44qGVXGWOPaWljq6QC/MNNt/qTdGvlkCzoqOKRd5GGOzENGYtLsuvktY/JgldRY1jNA8OyOpopcuTLZweQTbr4iLrNzEJS0WJBdfIbajyJWk/k+AwcUYk8DQUjNCDmAMmmp3Gi13x+DAg+T0aCCNDZJSMm3a8HyKVAD2ghFcHt1Go6LlIcYT+U5iL28OYdRFmR0lUXkdQ1h/Fy81AWW8flR4kZcUwiiOndwySEergB90rCFrh0QAOtkjOS9+W+jW3+spYa+qah13PdyLjb0RkE3lzW6XSWdx1JKcOItYpBzcuqohwuKBfq0E3G5+pEJskydzbQaXQtkCudd17qa4OZDNxBRxzuyse8scfUG3xUEddk+wGQRY1QueSGieO/+IJU1mLLXZsbuH8OAtmKAwajjbZuynvzMwE3PNKDC4gLLkYZp3FWlwqksbtTR+B0jjown6ldDhsXMBcGHxN+iCokTcUz8xw8oyh+YoztGVcnUsbfoLhiYPohXgmSlu4dHKNKU/D2R4OTn0VuyC3zUGx+IaKyZJ/hqnFPSsbaytlLsFXMIFowFYqfktcejM+wY+L8P4iP7NJ90oLuNa4HXjrTvH+UoIZ9hR6Ko3B4Qdbe5Ktw2FouGp6QAuadVlSQ/I2FHGNcgRxTRj6ASxc2yLnCvBWTgiYNmhGDB0Rc4Q7wDkpgFsNYIWRM6BcVaRWQ+vJJTOyROcTpZdNztdRfElS6hwOtqLluSFxv9SKKyyHn7iOq9txetqb37yZ5+Kg3mxDvMJ9UPa5znB11G1GjDryuut0sCW8lgicBYdAkXE57XRqZ4fYnYtB+CTc4ulvfTyTSD6EgxRuPS3xTlpzBMovFCBsGuKcNJDSoiHrLsCgEPZ7hHV0Ln+97itMWfdiLMvAGCW/8Ahs/FaCsdvkykNcQLhDodLi68cYjVPqsQrJn/ADnzSOyP1PieSbfavXmPVQgpJDcWa1zj5AAleOGOvG25aQbyEOFr9LHfYrZo0BYLaDMwnxAZMr9dedui07sCizY9jLrEFtPCwBxuR43LK2Os1uujQXOa4293nZa32BExVeMPOYD5AZSLftn+C06jwYFfZvkDvA0EapQ7IkMjZIw4WXZXWYbLjvseeR/yi8RFb2gzxNNxTQRRW6GxcfvLLFae1DEvzpx7jlTmuHVkjQfJpyj7FVbrauizkhyRudzA0Hmm4JYAEpUvtkb1Ov1JCV1grKEzJqdUC4EJu5xK619t0O4hyU21ukmEub66otVKScoKUjHhHkgZDlrJSnu2oiI3D2ke8IhRojllYejh9qGS4Ien2Nuxp5kA/BAsI1SkQvDG4EatB+CLJmGy5bHZEyEXKivMnT4LjWveNdFReQOaCk3MA3IRXwPvo6w9UQwPdu7RQrJ1z427uSftMQcADzRjRtI1KTNBGSCCd1ETJaMJIdEHDZWGn5Kv4QwRwtb0VgptlpiKYbF9cHrR1gf9hQQxX/0is/5L/sQVT7Dj0VRtRMdLFLNkkcLWKkRTMBvZG7sNGgCzJDSPEch5Iwgk6J9a66ArKGYpXc7owpCd07K6BdQrAg2mA3XfZ2pfKUZrVZWBBsLRyVZ7TAI+Dq4Xyhwa0n1cFbstlSe1yqZT8HzscdZZGMHvv+COpZkiPo8/VMQDSAFFzguYRfkpWsJawAKJnNtV1ZCSUw+QmC/Luh9iUZommEvzUhPRoHxTjNqjT4RB9SEFjx1IKXLtCmtOSHOaObUo0u3O43RIh7C7EJQez7AhfekaPcStDcbNJCyLsIxEHgDB7uHgjez3PctYb8u3NmuD0WO5fJshVuMZZIsFxOWxJZSzOAHXIV5NgJfEGR6k5Whrzd3v2XqHtZr4sM4Kxsi5JpHM8/F4fxXl5rdC06iNuoeMpBO9vtW7S9NirDry592tJJdZoY4Xdb1WxdgcIfS4xM0EE1MbQDqQAw/xWPOjygAlrsjT4XDLYne3VbV2BvbBhmIB2Y2qW3B3HgCZqPAkDYaSZ0YylFxbEG0eH1NS42EUbpCfQE/gl4ZKaqbeNwDgNQqX2s4r+Z+BcblzZXGmdG0+bvCPvLnxw2NPHWJVTqqtmnebuleZCT1Jv+Ka7kFdkdd5RXODQdeSey2NZ5rzHoBZJPkzNtySYeHEnS5N1x2ugufNC2UELrlBcLSDrog5wY29ibA67IWQayvvKPVOGPNkyL8048k9j+ahRA90LixBQXQLq3yQ9H4PUzT4RQyn6dPG7/KE+Y6XmdEx4JDn8I4Q+QXcaVn8B8FMlg9FzH2NwM395yRW57alOJABzsm5e3qhwQK9t76omRw5rpmF7XRXSgDdTayZQV1xuURps4eqK+cHmERs93geatRZWUWzCxeJqnafQKDwrWFpU7T8loQthsTF8Kq/+S/7EEMS/wDS6v8A5LvsQQz7CTGAcSulItfm2uu3N1nH5FAF2wsiAk6IyhAW1XQbJIyWdZDOrQDkLtcjtIJumve6pSJ9zZHGOQXNIXKzntq8WB0UQvZ1SL/U0rRL6LPO2MhuCUrz9Ga/+Up1VeJoBW54MIxB95CPqUTUXAI8k+qX55CUyqfmlbplDnBX3o5RzElvxT0alRmCuIiqf32n4FSUbr8vJFHog7gfknjPnZOJXAvdYW1TF5yZXdCCntQWtcSOaJl5PQfYJV5+DIY7/qpZWf5yfxWw4fLM6QASuDeawD8n+vH5nqaYkXZVPPvAK3nDZLQvk8jZLmuQTPu22vceF6yIB7xJLFG4N3Lc4J+AWEQOa8tLsshJuRfxADlc9VrnblI78wQs3M1axtvMNcQsTlkc69gZBYMaHkZhrpYfBatNxEVZ2SbpGyDQl1yXG/zh9a1nsbbJT4TLiDCXB9W9rwdyA1qx1r3PaQ0tdazA1w8QHp6rdOx2lvwYJBc3rJ99xbKEWpfxJWaXND3sDaulNnWBIB3WR/lB8RO/kZHRlxz1NUxpF9w0F32gLVKCfuQ6EmzSNivPf5RVaXYrh2Hg6RsknI8yQ0fBpWGPY4xkk38knUO7uMtO7tE9ZGBbTdMcReHTNaNmi5TWQagW+aLegQI6/FGv0+0opdbYISHCLcim87jlNrJV7yRfVN5neFCyDSM3qCpCLa11GwG77qSiAJQRIckdlRo5ASAVyU2SLTrdWyHons3xCSq4Kw4G5MLXRX/dcQPwVkjdI52pVF7Gav2jhiaAm5gqXD6nAFaFBHmdqudLiYYzqoXFt7pk3w3B96mcUc2mpy7S6rdPNJWVGRu11bXJS5QrJZr7k3Xc4cLAKTbhbWgF+qW9jYBo0KbsPgrGSvPa+5sCEm1j87d91Ny02ps1JCk8QNuareTaWLCWkU7LjVTsAFlDYdbu2gG9lNU+yanko7iQ/wBlVf8AyXfYUF3E/wD0qr/5L/sKCGfZZGsga1HyBGJFt0UlIHnCAFxdOq4qIN5jZ10S5KWfHncuinAG6NCsCLWElKsYQUfurbBAEtOwTFLBWzJ1rXHmsx7dK4Q4ZQ0YPjlkc/ToB/qtOzrC+27GIjxDFC5+YwQABt9iTf8AgnUy3SK2YM1eLJnUaApX2rvX3ASNQbsOi1SZQpg2sVQP6zfsKko794BZRuA2L52n+q77VMsaAbpkOiCdSfCQLJw2QzQxO01aAU1nNzrYpancPZrfsuI/FEQ278nuhbPhOJ1FvHHW5fqLGlbxTOyUB5ErCfybK1rKTHKd2tqmKQD1YR+C3F9QHRnQNb0S5vkox3t6qDHh2FREus6okldldlIytAB97lkbQxzQSGvaxpLreAi++vOxWk9v1Sx+KYLTt8RbDK8gAlwBeBoPQFZlEPaHWIMrnPIBvd5A8ttQtVPiLn2OYXjRjS12W7jyOv2r0Z2IxNk4FgZrrUTnXrm/0XneFl7BtnlxtY/OFvP0XoXsaqhDwbQa6OfK8X3sZHKajwJAtuIQmnzE6EXXl7tkxL85ceVbQQRTRxwXvzDbn4uXq7FmMqqcFp1Oi8X8V1vt3FOLVBIcJKuWx8g4gfALLBDSLLcrSSQNPcoR8hllkk5OOnopTEpRDSuaCMz/AAA/b8FFNb4QETZZwlEe62iOfNIvIFxZA2UFebBNp32Z9SWcbppUnwn3IGyCVOfEpOI+FRsHzgpGPRqkS2HIueqbSAsOxTkHVcnjzx5huFbKNR7BqzNU4pRk6OjjmA8wSD9oWy08fyqwPsKmczjJ8Q+bJSyA/UQV6DiADtNFgt8ww9bhsdVAb72VUZSvw+qLg24vvZXYPGTU8lFTQBzzdoIQyZICMVbHMwZtCnIDXN0IKRdh7HN0Fj5Ju6jniHybygeC8Dt0AdyRfZR0TQT1sB1YSEqzFCCBJEd1WC0sEhBRTQkPiNxzUpS1JbpILJrS1kTmCxIKfsfE/wDZKKLaI0g2Izxuwqrs7XuXb+iCSxKOI4dVFv8Awnc/JBFubK2oRBBGqKd0YADdCwJS8DAgJujBp5o4AG9ka7eZChBItA1QulSWAbohc0qysBb+aKLlGLQUVzbc1aIGu2x5FeVOM46riLj7FxraOoc0nk1oNh9i9UWa0EuOi81cZY7SxcR4s/DIWtbPUue95N8x2uPLQrTpo/LkCfRC/maGjjJe7X1UJiMrW3axPJamSpBL5DfoVE1hFz5LZNrpCxfh6QmukZ+1H9hU/my36qtYAbYmAObHhWNwOUlFB8EEpNdeaVojmjlbppY/gkJDYnyXaKT5aRu5LPsIRkNm/J6p5JBj0rDqyWAf5XrcYJ3vjcx24WM/k2ysaMfjcbF0sGn/AGvWz1tNJFaaB2Vw+KXZ2QwftuL2cXwtu7NHRR2s/Llc5ziL8z/qqREzPtZ4YA0OAy2+rc81ZO1eodV8fVQlLS+OOJrpGDM8AMG48ibqtU/jc03z7yPcw+MddToLaHTqtlaxFCZPkfM3sLODRYXGV2vlz1Xobsyw6/AmEyRl1zE52o11e5eeYLvs5xDxfO7XxaeZXpjs3Y6m4EwZh3NI1xPXMS78UOp8S4di+IYjJQ0kz5DpFG5/uBP4Lx3nMzjK/UvJcfr1XqntJrRScI4zUXsWUkgB8yMo+1eUKh/cRFx0yhZoDSPxGbvarINo/tSGiTa4klx1c43KOCVRAr7AaJu83KXfuL6JB+6FkCu2TOc3BCdyWaCUxnPhKBkBB84FSUfzQo2E+Jqk2ML4xlUh0WztrlHZvY7FIP7xh1ajRzAuF0eSjQOw+ld/LWd/0YaR5v6loW+d4GuWSdhdA0txXEgBc93AOul3H8Fq4AOq51z+YwcCQkbogJ5rgIa3ZFz3OiU2WuhQF10o2NEZte6VEmmqhDnd33QFIx2paD9S6JW3SgmF91CCkVLGBsE6jp2DmQkYniycMe0jdQtiOIwWw6qId/RO+xBHxJwOG1QH/Cd9iCIoQLr7hcsSLgoX6I2YEWCEYFGYHe66X2GqLmc3kg655WUIGu07IEJMxkka2Rx4dFECwA2KAIO6KCAUGtuTcokiEbxNXDD8DragWbkidY+Z0H2rzZiM2FwSFjiXuG5Avqt97Snth4Qrbu3yj/MF52rGwDM9199dFv03Eci5jGsqqIj5AWKip3B17bp7MaLNqbfUmFU+nyjuiSUcgUHwNpGKR/uu+xWVxNlXMAN8Sbzsx32KxO2Ta+ihtM85iuUbrVjNfnAt+CDyM2oSbPk6qN3R4P1XRENr/J9cBNjgabOEkB+DlvQmc+DW17LzJ2QYtNhWM4pIxuaHNGJAOQ8Vj9q9HUFZHWU7JYnBzXi4sgmQ859ozu+46x2XKQwVJiDs1h4WgEW3O3wUK2IXvcvF+7a4WbmH7o3uFJ8XyudxjjEzLB4rJjnjsTfOQ255aiyhYpHOeHAZsoLi+K97nUXPqt0OkZ2SQdcOy/KbNaSLOsB0Xp3hH5Pg7Bw3YUUP3QvL0ZJgc+zHZWFxc3Qgn7V6l4ZZk4Yw+LTw0sI0/cCVqekMrKH201hg4IrmDeeSKL6i8E/dXmTGJ/mQjnq70XoDt5qw3B6KlJt3tWX2vyYw6+9wXnOeXv53ycidPRZl1gYFA1RidFxouuuChAjibJF6VddJOVMghKb2Cazi0ZTtwF7pvUAd24i+xQMtCENyQVK08hYAU54tp8NpMefDhLCymMFO9zb3DZXQsdIB5ZiUzibJbRt1USMftfHKLOGqTkoQdWn3Ikcbjq4FqUe8xCwJKb/0o0nsJr302NV2FyHwVEAlaD+0w/wPwW2ZAOi899j9U93HdK21g+GVp9Mt/wAF6DBBsFzb/MYgz22bZJd1qlnkEJMNcdknBaAfk11xzjQpZtPnAzGyVbTMaeqheBlct5IzC7oU7MTP2UO7G4CheAsTiN9EtndyKTDN0eJgBJcbKECVrj7DUa/0bvsQRa5w9jnA/Yd9iCJFM7n53R2uvskW2KMy4vyQhDlpt5rl7vvskQ5wOt0HZnG40soQXL2k9EUuBOiI2PW6MBl5XVopnNDsFzIUYyAXFrLrZAArIUHtinazh+npif1s1yL8gCVg88dickrbfsuWtdtdS01lFTvks0RucW+pt+Cyh5gBIGZ3/aunQsVoVJ8kbMI/pBqYVUcV73aE/qpmi9o7+oUPUzB7ie7yqTKQ+4fiBrnvbs1hB+uynJHFqjeHYx3EjwLZnKQm+cdU2HiUN3HVcFyPNp+H/wDUHJShqYqashlnhE8LZGukjP0mg3IUIXvsZqI5OJMWglPhngZb1D/9VuGGyS4LM1ly6ncQR5LAOyqWObiLEpo2CJkkQewfsDvNB7rLf6esD8MdJKBeONxJ9GkqmQwDEpvasQqp5MwNRUSvzuPhIzG+m+/NFjZmeXSEHO4kuab6DezfjqkGEtL5GteHAZSWHMHE3vqdtOicsjdGXODg3IA0vi+a425k9QtyXBnY8Hjic+Q5s1yXC2awHRekOHMTbHhVJG95NoIxr+6F5tiaCC0ZXiwYHM0F/TmvTEuFximZkaG5WNGnoEjUvhDKzFfyjq8MqcLgjcD3kMrgOl3AE+4FYeG7cgtP7eS8cV0EMpcWMoxYjUi73fwWbysis3unSnqZLfCyzoYFDdERyOTpYLisgkb2SZGicEdUjJYbIWQbPvskZW3aRbknBF0R4QstDJrnFxcSXFSFJVtFmPBb5lNKcNJI53KeRRgixCqPBGPe8aRobIuTMeoRRZo2C5aSQ+AWCYUaV2JYRHVcSz1hOtJTOsPN5A+y63JtO0aki6wnsPqpqfiyWnzEsnpn5v8AtIIW9AW30uudf5jY9B2sYBe10GjW+Wy6xpy6DRGLmga7pISOXNj0QaL7kIpsb2KKDYWuoWKlhB3CKYnAg30RNb6EoAvJ30VEFtigSDsEkZwHAOB9Uq1zHHf61CCFcCKSe4/oz9iCFdY0s9jfwO+xBWCzoAGtwjXam5sPEDfyXRPYajVC2HgXL2sNiuPcRrcWTVzXy76LuW3znFVuIOhIG6gorqjXZINy7XulA5uUckUHkCTAZSSdF0Eu+kuZQkqidlJDJPK4NjjaXOceQCYlli2zGu1udk/Ez4y0v7mFjfr3/FZ7PE4A9057RzB2Vh4txt+JYvV1YGkz7gdBy+AVZnc+oJzSuA6WXWhHEUgRnMcps4D1UdU5W+9Pp6djNS439VGVFi42JSpEJ/BG5cPa4aB5v8UtI/UldocrMKp4/wCktf6gBr8UjJvZNXRQV2yKWXBB1RtSEZrVZZovYfgQxLEMae0ACGCFoHmXE/gtOxSSbB8GxJkmgbTS5S7UXyn+KoPYHikVBiuK0slh7T3OU+YzfxWq9osEcnB2KPu1r+5DQ4nLYuc0alUvJIp9GAU8fdZGvBjv47OHhdp4bN94T2JrckeZvdX8YIOYeXh5JIAHOY7x53WDfo25+I9ClIHZC+ze7a45PB8zz19y6C4M+TsDHOqY3FpJJDy5p2udNOWq9VyCzAPILzAC1rr/ANYDMz5u+q9MOqGvj8LtbLNql0NrPOP5ReT+WNA0bihbf63vWWH4rSvygn5uN4CTr7DH956zNx1WZDDt76o1tEVoRjsiIFdsm8mhTh1wE1kPiQyIESbiTdKf/fVcLLAl2/T+KFkQzax5JLBzTmF1Q214y4JOnlDZXtJG6kYzcWCFItgiew6OjeD5hL+EtvcomQkauIC45gjbe5JTCjQOxVjn8Zgt2FNLf3Bb9kIbqQVg3YYWO4tluSHeySZfPUX+C3h7iGXbYrn6jzGw6OxSOFrosh8VuqK2V5Bu3TqEYSMI0163SAkAARjxG48kGmM6g6oA5jltuiyQGMXDiHdFRBY66ckn4uqTEr7gOGYdUdxDXC2gULOHMDYtuV1jjbxABGa7KfEhnZe+hURAtUW+xTCx/Vu+xBEqiTSzWFhkP2IKAsKWZEmbZtjdORdx11XDG0uOyS0MQk1xdpsgRZckcIiQXZulkT5R4uxpt1KrBAzbMdqUM19Qu+zvNsxt6ICnI6lNrYuYYOsFAce1LoOFa1zSW3DWk+RcArEyIDbl1VZ7TG34OrW9Sz7wWqpfJCjEqyOF8mdztLahQtbVtu5kMQA6lPHvyXDtwo6ZxJ1Av5Lqsoj5u8IN0wFPLUVMcETTJNK9sbGDdzibAe8p9VTOGg0Ul2cxCXjrCpZdY6R76x9xcZYmOk//AFWWRBSG8NdLA4ZTBAGuaeTi65HwST9XmyJSZ3+0VcjiZKkh7r9dz9qNuU+PRDrG3S0bRuuRM2S4ABCIhonY9RU0oxWaVwbIyeEMPO4a4/itG7RcQb/I6pja5ru8kiZY638QO31LCuC8bgpcSnw6WoMZqH52EPt4rbH1CuWN5YqJhNQZPlRmEkhDQLHfXTogg8zSJLogZXmGTI4kOjafDIM2p3sB5dUmwFkouSwsF7uu4E8ttrpzk79rQ25zO2J0080RsN8osWCQg2ePCQNvMrpIyi1I4NLBr4QCS03ub/DTRemJogwWZoF5kitEAbFgebgAeG1/futun46pmRgVDZIHEAWew9PJZdT9DqzGO3y440hJ/wDhR/eesz1uFeu2HFocY4mhngkEjW0rG3A55nfxVGas4wVZsulcbsu7qyCTybJEjM+1yE4cE3qHNjYXAajX0QsgbK2Ifw3PqU1nkJFhoOiWPiSMtgCShZEM2frjc2UpTGw+eVFjxynkpCja5pHiBHmhiWx7nda17ovz9Dou3y6owc12hGpTSi59j0joOPKBoNhK2SP3sP8ABeh3sJBbpbqvNXZ090HGuEPaSb1DW29QR+K9Kl5y5jqFz9T5DodBS7umhti70XAyN7S65BPJKjM5nhA1SD5Aw2+ks2Q2gXIINiAF2aYvHg3tzSQklla4iM2HNcfDLdpJ8JGqhWDsT3xRkvOp6IzJnS6ZbDldcia1hyizktJGCRmFh5KFgbE5+kj226hGEOQkx6gcyiGK+rCQlLvYbHa2ihBOsc51LLfbIfsQRatxbTS6HVpCCgLOue/La+UImXN4r3CCCSEjrQy/hGqUBzaZkEFZDvem1rXXe90+aggjh2CzhcSRbQKk9rFWYeH4YAdJZtfQC6CC2UeaEsw6qu95sE0ks0XtdBBdNlEdUta7Uqc4Rp3UGBcS44WkD2VuFU7r2vLUOGa3pG13vCCCyz7QWBmbMia0aWQjG6CC0Ai7dhZLRnm7YaoIIiFPxGUmvkNiCLWI5aJ7T4/i0URbHiM5iPhLHuzjXyKCCxt4yQ0yhp8Uo8PppcTgexsw7uN7mkseedidiE8lYLOJsCBlyv115+nVBBdPTzcq8sTZFJjKj4kpcHqZq6aimqIqRocDHI0tB5mx312TPGe2NtYf0fDqgi980soF/cEEFgsslJ8jksLgqmJY7/KCp9rMHs9gIy2972N7/FINCCCJEFg1cQQTPogR2yZ1PjaW9UEEtkEWSvawNc3UaXSb7u1KCCEg3BLZypWjsbWsgghj2QeZFx5aBYBBBPfRCd7PJCzjbBb7e1M0Xpx0r3C7WAN/rIILnaryQ+HRxsMk9j3hHk3ZH7qMEnKQRpcoILMGwr25ha+h5IrYnsFgbjp0QQUKB3Yjd4WnMVwODtX+EhBBQgY6Nu3c7Ac0fvHBozN169EEFCCNXd1JLqPmn7EEEFaBZ//Z" width="360" height="360" alt="Portrait of Samy Mohamed">
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-title">
+    <div class="wrap">
+      <span class="eyebrow">Selected Work</span>
+      <h2 id="projects-title">Projects</h2>
+      <div class="grid">
+
+        <article class="card">
+          <svg class="viz" viewBox="0 0 240 80" role="img" aria-label="Waypoint path ending at a target" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 62L60 40L110 52L160 24L216 30" stroke-dasharray="4 3"/><g fill="currentColor"><circle cx="12" cy="62" r="3"/><circle cx="60" cy="40" r="3"/><circle cx="110" cy="52" r="3"/><circle cx="160" cy="24" r="3"/></g><circle cx="216" cy="30" r="7"/><circle cx="216" cy="30" r="2" fill="currentColor"/></svg>
+          <span class="num">01</span>
+          <h3>Autonomous Long-Range Strike Drones</h3>
+          <p>Long-range autonomous flight needs dependable behavior in every mission phase, from takeoff through terminal guidance. I designed the guidance logic for those phases and built the ESKF-based sensor fusion for state estimation. I also tuned the cascaded autopilot loops to hold the trajectory under environmental disturbances.</p>
+          <ul class="tags"><li>ESKF sensor fusion</li><li>Terminal guidance</li><li>Waypoint navigation</li><li>Cascaded autopilot</li><li>PX4</li></ul>
+        </article>
+
+        <article class="card">
+          <svg class="viz" viewBox="0 0 240 80" role="img" aria-label="Route entering a loiter orbit" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 62Q60 62 100 44"/><circle cx="142" cy="40" r="26" stroke-dasharray="4 3"/><circle cx="116" cy="40" r="3" fill="currentColor"/><circle cx="168" cy="40" r="3" fill="currentColor"/></svg>
+          <span class="num">02</span>
+          <h3>GNC Systems for Autonomous ISR UAVs</h3>
+          <p>ISR missions depend on stable flight, repeatable route execution, and safe handling of faults. I implemented waypoint navigation, loiter, return-to-home, and failsafe modes, and designed the longitudinal and lateral autopilot loops. I validated the system through simulation and flight log analysis.</p>
+          <ul class="tags"><li>Waypoint &amp; loiter</li><li>RTH &amp; failsafe modes</li><li>Autopilot design</li><li>Flight log analysis</li><li>SIL testing</li></ul>
+        </article>
+
+        <article class="card">
+          <svg class="viz" viewBox="0 0 240 80" role="img" aria-label="Interceptor path converging on a moving target" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M20 20Q120 30 220 60" stroke-dasharray="4 3"/><path d="M20 68Q120 76 190 52"/><circle cx="190" cy="52" r="6"/><circle cx="20" cy="20" r="3" fill="currentColor"/><circle cx="20" cy="68" r="3" fill="currentColor"/></svg>
+          <span class="num">03</span>
+          <h3>Interceptor Drones</h3>
+          <p>Intercepting a moving target needs responsive guidance and tightly tuned control. I develop mid-course and terminal guidance using pursuit and proportional navigation laws, and tune the autopilot for tracking accuracy. The guidance runs as real-time embedded software.</p>
+          <ul class="tags"><li>Mid-course guidance</li><li>Terminal guidance</li><li>PP / PN / APN</li><li>Autopilot tuning</li><li>Real-time C++ / Rust</li></ul>
+        </article>
+
+        <article class="card">
+          <svg class="viz" viewBox="0 0 240 80" role="img" aria-label="Closed-loop guidance simulation block diagram" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="8" y="26" width="56" height="28" rx="3"/><rect x="92" y="26" width="56" height="28" rx="3"/><rect x="176" y="26" width="56" height="28" rx="3"/><path d="M64 40H92M148 40H176M204 54V68H36V54"/><text x="17" y="43">Guidance</text><text x="99" y="43">Autopilot</text><text x="195" y="43">Plant</text></svg>
+          <span class="num">04</span>
+          <h3>Modeling &amp; Simulation of Homing and Commanded Guided Missiles</h3>
+          <p>Evaluating guidance concepts early requires high-fidelity models and closed-loop testing. I build dynamic models in Simulink to develop guidance algorithms and controllers, then validate them in closed loop. Homing and command guidance are compared using PP, PN, and APN laws.</p>
+          <ul class="tags"><li>Simulink</li><li>Guidance laws</li><li>Closed-loop validation</li><li>MIL / SIL / HIL</li></ul>
+        </article>
+
+        <article class="card">
+          <svg class="viz" viewBox="0 0 240 80" role="img" aria-label="Mobile base with a two-link arm" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M20 70H220" stroke-dasharray="2 4"/><rect x="40" y="48" width="92" height="14" rx="3"/><circle cx="58" cy="66" r="5"/><circle cx="114" cy="66" r="5"/><path d="M86 48L110 26L160 20M160 20l9-6M160 20l9 6"/><g fill="currentColor"><circle cx="86" cy="48" r="3"/><circle cx="110" cy="26" r="3"/></g></svg>
+          <span class="num">05</span>
+          <h3>Autonomous Mobile Manipulators</h3>
+          <p>Mobile manipulation couples base motion, perception, and planning, so the autonomy software must be modular and well validated. I contribute to the navigation, state estimation, and motion planning stack, tested in ROS 2 and Gazebo before hardware.</p>
+          <ul class="tags"><li>ROS 2</li><li>Gazebo</li><li>Sampling-based planning</li><li>State estimation</li><li>Sensor fusion</li></ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" aria-labelledby="exp-title">
+    <div class="wrap">
+      <span class="eyebrow">Experience</span>
+      <h2 id="exp-title">Where I've worked</h2>
+      <div class="timeline">
+        <article class="role">
+          <h3>Senior GNC Engineer, Appraid-Tech</h3>
+          <p class="meta">12/2021 – Present · Smart Village, Cairo</p>
+          <ul><li>Define software requirements for the guidance, navigation, and autopilot subsystems.</li><li>Implement mission-phase guidance, ESKF navigation, and cascaded autopilot loops, validated through simulation and flight log analysis.</li></ul>
+        </article>
+        <article class="role">
+          <h3>GNC Engineer, ITI</h3>
+          <p class="meta">10/2019 – 12/2021 · Smart Village, Cairo</p>
+          <ul><li>Built a complete guidance, navigation, and autopilot architecture for an autonomous drone, from takeoff to terminal guidance.</li><li>Developed Simulink models for controller design and integrated the software with the PX4 flight stack.</li></ul>
+        </article>
+        <article class="role">
+          <h3>Robotics Software Engineer, MechaSol</h3>
+          <p class="meta">08/2018 – 10/2019</p>
+          <ul><li>Designed a modular autonomy architecture for mobile robots covering navigation, state estimation, and motion control.</li><li>Fused IMU, wheel odometry, and vision data, and validated the stack in ROS and Gazebo.</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <span class="eyebrow">About</span>
+      <h2 id="about-title">Background &amp; Skills</h2>
+      <div class="cols">
+        <p>I am a Senior GNC Software Engineer with 6+ years of experience on autonomous UAS and robotic systems. I work model-first in MATLAB/Simulink and write production code in C++, Rust, and Python, then validate through MIL, SIL, and HIL testing. I currently work at Appraid-Tech and am completing an M.S. in Aerospace Engineering at Cairo University.</p>
+        <div class="skills">
+          <div>
+            <h3>Guidance &amp; Control</h3>
+            <ul><li>Guidance law design</li><li>Flight control &amp; autopilots</li><li>Trajectory tracking</li></ul>
+          </div>
+          <div>
+            <h3>Modeling &amp; Simulation</h3>
+            <ul><li>Vehicle dynamics modeling</li><li>Six-degree-of-freedom simulation</li><li>Performance analysis</li></ul>
+          </div>
+          <div>
+            <h3>Autonomy &amp; Navigation</h3>
+            <ul><li>State estimation &amp; sensor fusion</li><li>Mission autonomy</li><li>Path planning</li></ul>
+          </div>
+          <div>
+            <h3>Robotics</h3>
+            <ul><li>Mobile manipulation</li><li>Motion planning &amp; control</li><li>Systems integration</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="open-source" aria-labelledby="oss-title">
+    <div class="wrap">
+      <span class="eyebrow">Open Source</span>
+      <h2 id="oss-title">Code on GitHub</h2>
+      <div class="oss">
+        <a href="https://github.com/SamyMohamed1/flight-dynamics-control"><em>Rust</em><strong>flight-dynamics-control</strong><span>Flight dynamics simulator.</span></a>
+        <a href="https://github.com/SamyMohamed1/UAV_flight_control"><em>MATLAB</em><strong>UAV_flight_control</strong><span>Development of a real-time autopilot for UAVs.</span></a>
+        <a href="https://github.com/SamyMohamed1/uav_path_planner"><em>Rust</em><strong>uav_path_planner</strong><span>Path planning algorithms for UAVs.</span></a>
+        <a href="https://github.com/SamyMohamed1/rust_common"><em>Rust</em><strong>rust_common</strong><span>Common utilities and algorithms in Rust.</span></a>
+        <a href="https://github.com/SamyMohamed1/PID-controller-with-modifications-in-C"><em>C</em><strong>PID-controller-with-modifications</strong><span>Practical modifications to the standard PID controller in C.</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="recognition" aria-labelledby="rec-title">
+    <div class="wrap">
+      <span class="eyebrow">Credentials</span>
+      <h2 id="rec-title">Education, awards &amp; courses</h2>
+      <div class="recog">
+        <div>
+          <h3>Education</h3>
+          <ul><li>M.S. Aerospace Engineering<small>Cairo University · 2024 – 2026</small></li><li>Professional Diploma, Mechatronics Engineering<small>ITI · 2019 – 2020</small></li><li>B.S. Electrical Engineering<small>Zagazig University · 2013 – 2018</small></li></ul>
+        </div>
+        <div>
+          <h3>Awards</h3>
+          <ul><li>Customer Hero Award<small>Appraid-Tech</small></li><li>Outstanding Performance Award<small>Appraid-Tech</small></li><li>The Most Productive Award<small>Appraid-Tech</small></li></ul>
+        </div>
+        <div>
+          <h3>Courses</h3>
+          <ul><li>Flying Car and Autonomous Flight Engineer<small>Udacity</small></li><li>Self-Driving Cars Specialization<small>Coursera</small></li><li>C++20 Masterclass<small>Udemy</small></li><li>Rust Programming, Beginner to Expert<small>Udemy</small></li><li>Embedded System Diploma<small>Swift Act</small></li></ul>
+        </div>
+      </div>
+      <p class="langs"><b>Languages:</b> Arabic (native), English (fluent), German (beginner)</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h2 id="contact-title">Let's talk about your next system</h2>
+      <p>I'm open to conversations about GNC, autonomy, and robotics roles. Email is the quickest way to reach me.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:samy.elewa73@gmail.com">Email me</a>
+        <a class="btn ghost" href="Samy_Mohamed_CV.pdf" download>Download CV</a>
+      </div>
+      <dl>
+        <div><dt>Email</dt><dd><a href="mailto:samy.elewa73@gmail.com">samy.elewa73@gmail.com</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://linkedin.com/in/samy-mohamed-a1383b16a">linkedin.com/in/samy-mohamed-a1383b16a</a></dd></div>
+        <div><dt>GitHub</dt><dd><a href="https://github.com/SamyMohamed1">github.com/SamyMohamed1</a></dd></div>
+        <div><dt>Location</dt><dd>Cairo, Egypt</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="yr"></span> Samy Mohamed</div>
+</footer>
+<script>
+(()=>{const r=document.documentElement,b=document.getElementById("tgl");
+const dark=()=>r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;
+try{const t=localStorage.getItem("theme");if(t)r.dataset.theme=t}catch(e){}
+b.addEventListener("click",()=>{const n=dark()?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("theme",n)}catch(e){}});})();
+</script>
+<script>document.getElementById("yr").textContent=new Date().getFullYear();</script>
+</body>
+</html>
